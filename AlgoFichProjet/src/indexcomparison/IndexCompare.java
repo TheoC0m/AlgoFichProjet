@@ -33,12 +33,17 @@ public class IndexCompare {
 
 	}
 
+	/*
+	 * utilise la methode comp sur 2 indexs, en changeant le compare et le comparant
+	 */
 	public void compare() {
 		StringBuffer sb = new StringBuffer();
-
+		//on compare index1 a index2
 		sb.append(this.comp(this.index1, this.index2));
+		//des sauts de lignes
 		sb.append(System.getProperty("line.separator"));
 		sb.append(System.getProperty("line.separator"));
+		//on compare index2 a index1
 		sb.append(this.comp(this.index2, this.index1));
 
 		System.out.println(sb.toString());
@@ -51,7 +56,6 @@ public class IndexCompare {
 		try {
 			// pour lire l'index 1
 			BufferedReader br1 = new BufferedReader(new InputStreamReader(new FileInputStream(i1)));
-
 			// ligne courante de l'index1
 			String line1;
 			// ligne courante de l'index2
@@ -90,6 +94,7 @@ public class IndexCompare {
 					}
 
 				} else {
+					//sinon la ligne ne contient pas de nom de fichier donc on incremente et on passe a la suivante
 					if (i == 2) {
 						i = -1;
 					}
@@ -104,6 +109,11 @@ public class IndexCompare {
 			e.printStackTrace();
 		}
 		return sb;
+	}
+	
+	
+	public boolean fileExists(File file, File index){
+		
 	}
 
 }
