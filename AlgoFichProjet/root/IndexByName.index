@@ -67,6 +67,9 @@ e
 f
 /home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir3/dir3-2/f
 
+fichier_a_trouver
+/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir1/dir1-1/fichier_a_trouver
+
 html_test.html
 /home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/html_test.html
 
@@ -78,6 +81,9 @@ root_f2
 
 root_f3
 /home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/root_f3
+
+testcomp
+/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir3/testcomp
 
 xml_test.xml
 /home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/xml_test.xml

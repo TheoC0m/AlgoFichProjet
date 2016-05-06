@@ -15,29 +15,24 @@ public class test {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
 		DirectoryParser dp = new DirectoryParser();
-		Path path = FileSystems.getDefault().getPath("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir3");
+		Path path = FileSystems.getDefault().getPath("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root");
 		IndexBuilderFactory ibf = IndexBuilderFactory.getInstance();
 
-		try {
-			dp.parse(path, "filename", ibf);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		dp.parse(path, "filename", ibf);
 
-		try {
-			IndexCompare ic = new IndexCompare(
-					"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index",
-					"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir3/IndexByName.index");
-			ic.compare();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		IndexCompare ic = new IndexCompare();
+		ic.compare("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index",
+				"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir3/IndexByName.index");
+
+		ic.fileExists("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir1/dir1-1/fichier_a_trouver",
+				"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index");
+		
+		ic.fileExists("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir1/dir1-1/fichier_inexistant",
+				"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index");
 
 	}
 
