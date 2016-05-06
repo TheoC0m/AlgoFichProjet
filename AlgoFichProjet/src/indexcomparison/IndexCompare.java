@@ -23,14 +23,14 @@ public class IndexCompare {
 		File index2 = new File(index2_path);
 
 		// on verifie que les fichiers existent
-		if (index1.exists() || index2.exists()) {
+		if (index1.exists() && index2.exists()) {
 			// on verifie que ce sont des fichiers d'index et qu'ils sont du
 			// meme type
 			if (!((index1.getName().equals("IndexByName.index") && index2.getName().equals("IndexByName.index"))
 					|| (index1.getName().equals("IndexBySize.index") && index2.getName().equals("IndexBySize.index"))
 					|| (index1.getName().equals("IndexByType.index")
 							&& index2.getName().equals("IndexByType.index")))) {
-				throw new IOException("Erreur : veuillez fournir des fichiers d'index, de meme type.");
+				throw new IOException("Erreur : veuillez fournir deux fichiers d'index, et de meme type");
 			}
 		} else {
 			throw new IOException("Erreur : veuillez fournir des chemins d'acces valides");
@@ -112,20 +112,18 @@ public class IndexCompare {
 		return sb;
 	}
 
-	public boolean fileExists(String file_path, String index_path) throws IOException {
+	public boolean fileExists(String file, String index_path) throws IOException {
 
-		File file = new File(file_path);
 		File index = new File(index_path);
-
 		// on verifie que les fichiers existent
-		if (file.exists() || index.exists()) {
+		if (index.exists()) {
 			// on verifie que l'index est bien un fichier d'index
 			if (!(index.getName().equals("IndexByName.index") || index.getName().equals("IndexBySize.index")
 					|| index.getName().equals("IndexByType.index"))) {
-				throw new IOException("Erreur : l'un des deux fichiers doit être un index");
+				throw new IOException("Erreur : lle fichier doit etre un index");
 			}
 		} else {
-			throw new IOException("Erreur : veuillez fournir des chemins d'acces valides");
+			throw new IOException("Erreur : veuillez fournir un chemin valide vers un index");
 		}
 
 		// pour lire l'index
@@ -147,10 +145,10 @@ public class IndexCompare {
 
 				// si le nom du fichier recherche correspond a la ligne courante
 				// de l'index
-				if (file.getName().equals(line)) {
+				if (file.equals(line)) {
 					// on a trouve : le fichier est present dans le repertoire
 					// On affiche son chemin d'acces
-					System.out.println("Fichier trouve : " + file.getCanonicalPath());
+					System.out.println("Fichier trouve : " + br.readLine());
 					found = true;
 				}
 

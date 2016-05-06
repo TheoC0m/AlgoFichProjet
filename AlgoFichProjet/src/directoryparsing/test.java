@@ -28,10 +28,9 @@ public class test {
 		ic.compare("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index",
 				"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir3/IndexByName.index");
 
-		ic.fileExists("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir1/dir1-1/fichier_a_trouver",
-				"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index");
+		ic.fileExists("fichier_a_trouver", "/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index");
 		
-		ic.fileExists("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/dir1/dir1-1/fichier_inexistant",
+		ic.fileExists("fichier_inexistant",
 				"/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root/IndexByName.index");
 
 	}
