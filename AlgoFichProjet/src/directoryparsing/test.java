@@ -18,7 +18,7 @@ public class test {
 		// TODO Auto-generated method stub
 		
 		DirectoryParser dp = new DirectoryParser();
-		Path path = FileSystems.getDefault().getPath("/home/theo/Documents");
+		Path path = FileSystems.getDefault().getPath("/home/theo/GitRepos/algofichprojet/AlgoFichProjet/root");
 		IndexBuilderFactory ibf = IndexBuilderFactory.getInstance();
 		
 		
